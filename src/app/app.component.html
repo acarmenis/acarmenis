@@ -1,1 +1,20 @@
 Hello from App component!
+
+
+<form [formGroup]="sortForm" (ngSubmit)="requestToSortList()">
+    <mat-form-field>
+      <input matInput placeholder="sort-list" formControlName="sort-list" />
+    </mat-form-field>
+    <br />
+    
+    <button [disabled]="!sortForm.valid" mat-raised-button type="submit">
+      Senr request to sort int list
+    </button>
+
+  </form>
+
+
+<h2>Sorted List of integers</h2>
+  <ng-container *ngFor="let item of items">
+    {{ item }} <br />
+</ng-container>
